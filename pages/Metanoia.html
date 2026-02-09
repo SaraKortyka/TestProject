@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metanoia Men� Beispiel</title>
+<title>Metanoia Menü Beispiel</title>
 <style>
   /* Grundstyles */
   body {
@@ -48,7 +48,7 @@
     display: block;
   }
 
-  /* Untermen� */
+  /* Untermenü */
   ul.submenu {
     display: none;
     position: absolute;
@@ -72,7 +72,7 @@
     display: block;
   }
 
-  /* Mobile Men� Button */
+  /* Mobile Menü Button */
   .menu-toggle {
     display: none;
     font-size: 1.5em;
@@ -93,7 +93,7 @@
     ul.menu {
       flex-direction: column;
       width: 100%;
-      display: none; /* versteckt standardm��ig */
+      display: none; /* versteckt standardmäßig */
     }
 
     ul.menu li {
@@ -104,7 +104,7 @@
       padding: 10px 0;
     }
 
-    /* Untermen� mobil aufklappbar */
+    /* Untermenü mobil aufklappbar */
     ul.submenu {
       position: static;
       border: none;
@@ -127,7 +127,7 @@
       <li>
         <a href="#">BEDINGTHEIT</a>
         <ul class="submenu">
-          <li><a href="#">Evolution�re Grundlage</a></li>
+          <li><a href="#">Evolutionäre Grundlage</a></li>
           <li><a href="#">Das Determinismus-Paradox</a></li>
           <li><a href="#">Glossar</a></li>
         </ul>
@@ -140,7 +140,7 @@
         </ul>
       </li>
       <li>
-        <a href="#">H�RWEITE</a>
+        <a href="#">HÖRWEITE</a>
         <ul class="submenu">
           <li><a href="#">Das neuartige Miteinander</a></li>
         </ul>
@@ -149,7 +149,7 @@
         <a href="#">FORMATE</a>
         <ul class="submenu">
           <li><a href="#">Videokonferenzen</a></li>
-          <li><a href="#">Gespr�chsgruppen</a></li>
+          <li><a href="#">Gesprächsgruppen</a></li>
           <li><a href="#">Retreat</a></li>
         </ul>
       </li>
@@ -160,7 +160,7 @@
         </ul>
       </li>
       <li>
-        <a href="#">�BER UNS</a>
+        <a href="#">ÜBER UNS</a>
         <ul class="submenu">
           <li><a href="#">Unsere Suche</a></li>
           <li><a href="#">Kontakt</a></li>
@@ -171,9 +171,9 @@
   </nav>
 </header>
 <h2> Manifest</h2>
-Der Mensch ist ein biologisches System in einer kausal geschlossenen Welt. Unser Handeln entsteht automatisch, gesteuert von Mechanismen, die wir nicht erschaffen haben und nicht kontrollieren. Das Bewusstsein ist nicht der Urheber unserer Entscheidungen – es ist der Erzähler, der im Nachhinein erklärt, was längst geschehen ist.
+Der Mensch ist ein biologisches System in einer kausal geschlossenen Welt. Unser Handeln entsteht automatisch, gesteuert von Mechanismen, die wir nicht erschaffen haben und nicht kontrollieren. Das Bewusstsein ist nicht der Urheber unserer Entscheidungen â€“ es ist der ErzÃ¤hler, der im Nachhinein erklÃ¤rt, was lÃ¤ngst geschehen ist.
 Diese Einsicht erleben viele als Bedrohung. Wir erleben sie als Befreiung.
-Wir suchen Menschen, die bereit sind, sich dieser Realität auszusetzen. Nicht um zu resignieren, sondern um eine Lebensform zu kultivieren, die auf der Anerkennung unserer Bedingtheit gründet. Wir sind keine Meister, wir kennen den Weg nicht. Wir sind Suchende, die ein Stück gemeinsam gehen wollen.
+Wir suchen Menschen, die bereit sind, sich dieser RealitÃ¤t auszusetzen. Nicht um zu resignieren, sondern um eine Lebensform zu kultivieren, die auf der Anerkennung unserer Bedingtheit grÃ¼ndet. Wir sind keine Meister, wir kennen den Weg nicht. Wir sind Suchende, die ein StÃ¼ck gemeinsam gehen wollen.
 
 <br/>
 
@@ -186,7 +186,7 @@ Wir suchen Menschen, die bereit sind, sich dieser Realität auszusetzen. Nicht u
     menu.style.display = menu.style.display === 'flex' || menu.style.display === 'block' ? 'none' : 'block';
   });
 
-  // Mobile Untermen�s
+  // Mobile Untermenüs
   document.querySelectorAll('.menu > li > a').forEach(item => {
     item.addEventListener('click', (e) => {
       if (window.innerWidth <= 768) {
