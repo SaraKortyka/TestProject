@@ -78,7 +78,52 @@
     font-size: 1.5em;
     cursor: pointer;
   }
+  
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+    }
 
+    h1 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      margin-bottom: 1.6rem;
+    }
+ .emphasis {
+      margin-top: 3rem;
+      font-weight: 500;
+    }
+
+    .kernthesen {
+      margin-top: 6rem;
+      border-top: 1px solid #e5e5e5;
+      padding-top: 2rem;
+    }
+
+    .kernthesen-title {
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .kernthesen-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .kernthese {
+      color: var(--text-muted);
+    }
   /* Mobile Styles */
   @media (max-width: 768px) {
     nav {
@@ -114,6 +159,13 @@
     ul.menu li.open > ul.submenu {
       display: block;
     }
+        main {
+        padding-top: 4rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
   }
 </style>
 </head>
@@ -170,12 +222,41 @@
     </ul>
   </nav>
 </header>
-<h2> Manifest</h2>
-Der Mensch ist ein biologisches System in einer kausal geschlossenen Welt. Unser Handeln entsteht automatisch, gesteuert von Mechanismen, die wir nicht erschaffen haben und nicht kontrollieren. Das Bewusstsein ist nicht der Urheber unserer Entscheidungen â€“ es ist der ErzÃ¤hler, der im Nachhinein erklÃ¤rt, was lÃ¤ngst geschehen ist.
-Diese Einsicht erleben viele als Bedrohung. Wir erleben sie als Befreiung.
-Wir suchen Menschen, die bereit sind, sich dieser RealitÃ¤t auszusetzen. Nicht um zu resignieren, sondern um eine Lebensform zu kultivieren, die auf der Anerkennung unserer Bedingtheit grÃ¼ndet. Wir sind keine Meister, wir kennen den Weg nicht. Wir sind Suchende, die ein StÃ¼ck gemeinsam gehen wollen.
+ <main>
+    <h1>Manifest</h1>
 
-<br/>
+    <p>
+      Der Mensch ist ein biologisches System in einer kausal geschlossenen Welt.
+      Unser Handeln entsteht automatisch, gesteuert von Mechanismen, die wir
+      nicht erschaffen haben und nicht kontrollieren. Das Bewusstsein ist nicht
+      der Urheber unserer Entscheidungen. Es ist der Erzähler, der im Nachhinein
+      erklärt, was längst geschehen ist.
+    </p>
+
+    <p>
+      Diese Einsicht erleben viele als Bedrohung. Wir erleben sie als Befreiung.
+    </p>
+
+    <p class="emphasis">
+      Wir suchen Menschen, die bereit sind, sich dieser Realität auszusetzen.
+      Nicht um zu resignieren, sondern um eine Lebensform zu kultivieren, die
+      auf der Anerkennung unserer Bedingtheit gründet. Wir sind keine Meister,
+      wir kennen den Weg nicht. Wir sind Suchende, die ein Stück gemeinsam gehen
+      wollen.
+    </p>
+
+    <section class="kernthesen">
+      <div class="kernthesen-title">DIE VIER KERNTHESEN</div>
+
+      <div class="kernthesen-list">
+        <div class="kernthese">Handlungsautomatismus</div>
+        <div class="kernthese">Adaptionsautomatismus</div>
+        <div class="kernthese">Illusion der Urheberschaft</div>
+        <div class="kernthese">Illusion der Ausnahme</div>
+      </div>
+    </section>
+  </main>
+
 
 <script>
   // Mobile Toggle
