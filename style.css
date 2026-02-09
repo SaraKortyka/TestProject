@@ -1,0 +1,19 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+  text-align: center;
+  margin: 0;
+  padding-top: 20vh;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+button {
+  font-size: 1rem;
+  padding: 0.6em 1.2em;
+  margin-top: 1rem;
+  cursor: pointer;
+}
