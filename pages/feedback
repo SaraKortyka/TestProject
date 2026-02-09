@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <h1>Feedback</h1>
+  <p>Hier kannst du mir Feedback geben.</p>
+  <a href="../index.html">← Zurück zur Startseite</a>
+</body>
+</html>
