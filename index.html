@@ -39,16 +39,19 @@
 
 </main>
 
-<footer class="site-footer">
-    <div class="container">
-        Metanoia Akademie | Über uns | Kontakt | Impressum | Rechtliches
+  <div id="footer-placeholder">
+       
     </div>
-</footer>
 <script>
 fetch("kopfzeile.html")
   .then(response => response.text())
   .then(data => {
     document.getElementById("header-placeholder").innerHTML = data;
+  });
+  fetch("fusszeile.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
   });
 </script>
 </body>

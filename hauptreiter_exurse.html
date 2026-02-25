@@ -9,20 +9,9 @@
 </head>
 <body>
 
-<header class="site-header">
-    <div class="container header-inner">
-        <div class="logo">Metanoia<span>Akademie</span></div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">Kern</a></li>
-                <li><a href="#">Akademie</a></li>
-                <li><a href="#">Treffpunkt</a></li>
-                <li><a href="#">Geschichten</a></li>
-                <li><a href="#" class="active">Werk</a></li>
-            </ul>
-        </nav>
+ <div id="header-placeholder">
+       
     </div>
-</header>
 
 <main class="container content">
 
@@ -92,11 +81,21 @@
 
 </main>
 
-<footer class="site-footer">
-    <div class="container">
-        Metanoia Akademie | Impressum
+  <div id="footer-placeholder">
+       
     </div>
-</footer>
+<script>
+fetch("kopfzeile.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header-placeholder").innerHTML = data;
+  });
+  fetch("fusszeile.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer-placeholder").innerHTML = data;
+  });
+</script>
 
 </body>
 </html>
