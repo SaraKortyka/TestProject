@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Hello World</title>
-
-  <!-- CSS einbinden -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Metanoia Akademie</title>
+	<link rel="stylesheet" href="layout.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
-    <nav>
-  <a href="pages/about.html">Ãœber mich</a> |
-  <a href="pages/feedback.html">Feedback</a> |
-  <a href="pages/infos.html">Infos</a>
-  |
-  <a href="pages/app.html">App</a>
-  <a href="startseite.html">Metanoia</a>
-</nav>
-  <h1>ðŸ‘‹ Hello World!</h1>
-  <p>Meine erste Website mit GitHub Pages ðŸš€</p>
 
-  <button onclick="sayHello()">Klick mich</button>
 
-  <!-- JavaScript einbinden -->
-  <script src="script.js"></script>
+    <div id="header-placeholder">
+       
+    </div>
+
+
+<main class="hero">
+
+    <section class="intro container">
+        <h1>Du hast es bemerkt.</h1>
+
+        <p>
+            Vielleicht beim Beobachten deiner eigenen Rechtfertigungen.
+            Vielleicht beim Erkennen, dass dein Handeln deinem Wollen vorausgeht.
+            Vielleicht in dem Moment, als du gespürt hast:
+            Da ist ein Muster, das tiefer liegt als alles, was du dir vorgenommen hast.
+        </p>
+    </section>
+
+    <section class="insight container">
+        <h2>Einsicht macht einsam.</h2>
+
+        <p>
+            Wir sind Menschen, die diese Erfahrung teilen. 
+            Wir haben erkannt, dass wir bedingte Wesen sind. 
+            Wir haben den Absturz hinter uns und wissen: Die Landung war sanft.
+        </p>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        Metanoia Akademie | Über uns | Kontakt | Impressum | Rechtliches
+    </div>
+</footer>
+<script>
+fetch("kopfzeile.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header-placeholder").innerHTML = data;
+  });
+</script>
 </body>
 </html>
