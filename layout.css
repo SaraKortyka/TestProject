@@ -1,0 +1,272 @@
+/* =========================
+   RESET & BASIS
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    color: #222;
+    background: #f5f5f5;
+    line-height: 1.65;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+    background: #111;
+    color: #fff;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    font-family: "Georgia", serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.logo span {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+}
+
+.main-nav a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: #fff;
+    color: #222;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.dropdown-menu li {
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+}
+
+.dropdown-menu a:hover {
+    background: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+/* =========================
+   BREADCRUMB
+========================= */
+
+.breadcrumb {
+    font-size: 0.85rem;
+    margin: 32px 0 12px;
+    color: #777;
+}
+
+.breadcrumb a {
+    color: #777;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   TYPOGRAPHIE
+========================= */
+
+h1, h2 {
+    font-family: "Georgia", serif;
+    color: #111;
+}
+
+h1 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.lead {
+    font-size: 1.05rem;
+    max-width: 750px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+
+/* =========================
+   HERO (Startseite)
+========================= */
+
+.hero {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.intro {
+    margin-bottom: 80px;
+}
+
+.intro p {
+    max-width: 700px;
+    font-size: 1.15rem;
+}
+
+.insight h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.insight p {
+    max-width: 700px;
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 80px;
+}
+
+.card {
+    display: block;
+    background: #fff;
+    padding: 22px 26px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #e5e5e5;
+    transition: 0.2s ease;
+}
+
+.card:hover {
+    border-color: #ccc;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.card-row {
+    display: flex;
+    gap: 18px;
+}
+
+.card.half {
+    flex: 1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background: #f0f0f0;
+    padding: 24px 0;
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-row {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 16px;
+    }
+
+}
