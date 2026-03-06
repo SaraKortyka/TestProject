@@ -103,30 +103,31 @@ static convertUmlauts(str) {
 
 }
 
-document.querySelectorAll('.tooltip').forEach(el => {
-  let tooltipBox; // hier lokal für dieses Element
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('.tooltip').forEach(el => {
+    let tooltipBox;
 
-  el.addEventListener('mouseenter', () => {
-    const key = el.getAttribute('data-key');
-    const html = TooltipData[key];
-    if(!html) return;
+    el.addEventListener('mouseenter', () => {
+      const key = el.getAttribute('data-key');
+      const html = TooltipData[key];
+      if (!html) return;
 
-    tooltipBox = document.createElement('div');
-    tooltipBox.className = 'tooltip-box';
-    tooltipBox.innerHTML = html.replace(/\n/g, "<br>");
-    document.body.appendChild(tooltipBox);
+      tooltipBox = document.createElement('div');
+      tooltipBox.className = 'tooltip-box';
+      tooltipBox.innerHTML = html; // kann später Zeilenumbrüche oder HTML enthalten
+      document.body.appendChild(tooltipBox);
 
-    const rect = el.getBoundingClientRect();
-    const tooltipHeight = tooltipBox.offsetHeight;
-    tooltipBox.style.left = rect.left + window.scrollX + 'px';
-    tooltipBox.style.top = rect.top + window.scrollY - tooltipHeight - 5 + 'px';
-  });
+      const rect = el.getBoundingClientRect();
+      tooltipBox.style.left = rect.left + window.scrollX + 'px';
+      tooltipBox.style.top = rect.top + window.scrollY - tooltipBox.offsetHeight - 5 + 'px';
+    });
 
-  el.addEventListener('mouseleave', () => {
-    if(tooltipBox) {
-      tooltipBox.remove();
-      tooltipBox = null;
-    }
+    el.addEventListener('mouseleave', () => {
+      if (tooltipBox) {
+        tooltipBox.remove();
+        tooltipBox = null;
+      }
+    });
   });
 });
 
