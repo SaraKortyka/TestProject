@@ -254,11 +254,6 @@ h2 {
     transition: 0.2s ease;
 }
 
-.card:hover {
-    border-color: #ccc;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    transform: translateY(-2px);
-}
 
 .card p {
     font-size: 0.95rem;
