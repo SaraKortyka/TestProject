@@ -81,7 +81,7 @@ static async loadBreadcrumb() {
     path += `_${parts[i]}`;
     text = LayoutLoader.convertUmlauts(parts[i]);
     text = text.charAt(0).toUpperCase() + text.slice(1);
-    html += ` › <a href="${path}.html">${text}</a>`;
+    html += ` > <a href="${path}.html">${text}</a>`;
   }
 
   html += `</nav>`;
