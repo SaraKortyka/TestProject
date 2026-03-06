@@ -103,34 +103,62 @@ static convertUmlauts(str) {
 
 }
 const TooltipData = {
-  "Automatismen": "Automatismen \n Handlungsautomatismus: wir handeln bevor wir entscheiden \n Adaptionsautomatismus: das System lernt ohne unser Zutun"
+  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden \n Adaptionsautomatismus: das System lernt ohne unser Zutun"
 };
 document.addEventListener("DOMContentLoaded", () => {
+  function formatKeyTitle(key) {
+  return key
+    .replace(/_/g, ' ')   // Unterstriche zu Leerzeichen
+    .replace(/ae/g, 'ä')
+    .replace(/oe/g, 'ö')
+    .replace(/ue/g, 'ü')
+    .replace(/ss/g, 'ß')
+    .replace(/\b\w/g, c => c.toUpperCase()); // erstes Zeichen jedes Wortes groß
+}
   document.querySelectorAll('.tooltip').forEach(el => {
     let tooltipBox;
 
     el.addEventListener('mouseenter', () => {
       const key = el.getAttribute('data-key');
-      const html = TooltipData[key];
-      if (!html) return;
+      const content = TooltipData[key];
+      if(!content) return;
 
+      // Tooltip-Box erzeugen
       tooltipBox = document.createElement('div');
       tooltipBox.className = 'tooltip-box';
-      tooltipBox.innerHTML = html; // kann später Zeilenumbrüche oder HTML enthalten
+
+      // Key als Titel oben
+      const title = document.createElement('div');
+      title.className = 'tooltip-title';
+      title.innerText = formatKeyTitle(key);
+
+      // Inhalt darunter
+      const body = document.createElement('div');
+      body.className = 'tooltip-body';
+      body.innerHTML = content; // HTML erlaubt <br>, Links, Bilder
+
+      tooltipBox.appendChild(title);
+      tooltipBox.appendChild(body);
+
+      // Vorübergehend versteckt anhängen, um Höhe zu messen
+      tooltipBox.style.position = 'absolute';
+      tooltipBox.style.visibility = 'hidden';
       document.body.appendChild(tooltipBox);
 
       const rect = el.getBoundingClientRect();
       tooltipBox.style.left = rect.left + window.scrollX + 'px';
       tooltipBox.style.top = rect.top + window.scrollY - tooltipBox.offsetHeight - 5 + 'px';
+      tooltipBox.style.visibility = 'visible';
     });
 
     el.addEventListener('mouseleave', () => {
-      if (tooltipBox) {
+      if(tooltipBox) {
         tooltipBox.remove();
         tooltipBox = null;
       }
     });
   });
+  
 });
 
 
