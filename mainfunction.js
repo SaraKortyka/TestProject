@@ -50,42 +50,39 @@ class LayoutLoader {
   }
 static async loadBreadcrumb() {
   const file = window.location.pathname.split("/").pop().toLowerCase();
-  const breadcrumbContainer = document.getElementById("breadcrumb-placeholder");
-  if (!breadcrumbContainer) return;
+  const container = document.getElementById("breadcrumb-placeholder");
+  if (!container) return;
 
   // Startseite
   let html = `<nav class="breadcrumb"><a href="index.html">Startseite</a>`;
 
-  if (!file || file === "" || file.startsWith("index")) {
-    breadcrumbContainer.innerHTML = html + "</nav>";
+  if (!file || file.startsWith("index") || !file.startsWith("hauptreiter_")) {
+    container.innerHTML = html + "</nav>";
     return;
   }
 
-  if (!file.startsWith("hauptreiter_")) {
-    breadcrumbContainer.innerHTML = html + "</nav>";
-    return;
-  }
-
-  // Alle Ebenen extrahieren
-  const parts = file.replace("hauptreiter_", "").replace(".html", "").split("_");
+  // Alles nach hauptreiter_
+  const namePart = file.replace("hauptreiter_", "").replace(".html","");
+  // Split nach doppelt Unterstrich = neue Breadcrumb-Ebenen
+  const parts = namePart.split("__");
 
   let path = "hauptreiter_" + parts[0];
 
-  // Erstes Segment = Hauptreiter
+  // Erste Ebene = Hauptreiter
   let text = LayoutLoader.convertUmlauts(parts[0]);
   text = text.charAt(0).toUpperCase() + text.slice(1);
   html += ` &rsaquo; <a href="${path}.html">${text}</a>`;
 
-  // Unterseiten iterativ
+  // Restliche Ebenen
   for (let i = 1; i < parts.length; i++) {
-    path += `_${parts[i]}`;
-    text = LayoutLoader.convertUmlauts(parts[i]);
-    text = text.charAt(0).toUpperCase() + text.slice(1);
-    html += ` &rsaquo; <a href="${path}.html">${text}</a>`;
+    path += `__${parts[i]}`;
+    let subText = LayoutLoader.convertUmlauts(parts[i]).replace(/_/g, " ");
+    subText = subText.charAt(0).toUpperCase() + subText.slice(1);
+    html += ` &rsaquo; <a href="${path}.html">${subText}</a>`;
   }
 
-  html += `</nav>`;
-  breadcrumbContainer.innerHTML = html;
+  html += "</nav>";
+  container.innerHTML = html;
 }
   static async loadFooter() {
     await this.load("footer-placeholder", "fusszeile.html");
