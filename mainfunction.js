@@ -104,17 +104,18 @@ static convertUmlauts(str) {
 }
 
 document.querySelectorAll('.tooltip').forEach(el => {
+  let tooltipBox; // hier lokal für dieses Element
+
   el.addEventListener('mouseenter', () => {
     const key = el.getAttribute('data-key');
     const html = TooltipData[key];
     if(!html) return;
 
-    let tooltipBox = document.createElement('div');
+    tooltipBox = document.createElement('div');
     tooltipBox.className = 'tooltip-box';
-    tooltipBox.innerHTML = html;
+    tooltipBox.innerHTML = html.replace(/\n/g, "<br>");
     document.body.appendChild(tooltipBox);
 
-    // Position oberhalb des Elements
     const rect = el.getBoundingClientRect();
     const tooltipHeight = tooltipBox.offsetHeight;
     tooltipBox.style.left = rect.left + window.scrollX + 'px';
@@ -122,12 +123,14 @@ document.querySelectorAll('.tooltip').forEach(el => {
   });
 
   el.addEventListener('mouseleave', () => {
-    const box = document.querySelector('.tooltip-box');
-    if(box) box.remove();
+    if(tooltipBox) {
+      tooltipBox.remove();
+      tooltipBox = null;
+    }
   });
 });
 
 
 const TooltipData = {
-  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden \n der Adaptionsautomatismus: das System lernt ohne unser Zutun"
+  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden der Adaptionsautomatismus: das System lernt ohne unser Zutun"
 };
