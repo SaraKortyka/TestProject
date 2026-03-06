@@ -102,3 +102,32 @@ static convertUmlauts(str) {
   }
 
 }
+
+document.querySelectorAll('.tooltip').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    const key = el.getAttribute('data-key');
+    const html = TooltipData[key];
+    if(!html) return;
+
+    let tooltipBox = document.createElement('div');
+    tooltipBox.className = 'tooltip-box';
+    tooltipBox.innerHTML = html;
+    document.body.appendChild(tooltipBox);
+
+    // Position oberhalb des Elements
+    const rect = el.getBoundingClientRect();
+    const tooltipHeight = tooltipBox.offsetHeight;
+    tooltipBox.style.left = rect.left + window.scrollX + 'px';
+    tooltipBox.style.top = rect.top + window.scrollY - tooltipHeight - 5 + 'px';
+  });
+
+  el.addEventListener('mouseleave', () => {
+    const box = document.querySelector('.tooltip-box');
+    if(box) box.remove();
+  });
+});
+
+
+const TooltipData = {
+  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden \n der Adaptionsautomatismus: das System lernt ohne unser Zutun"
+};

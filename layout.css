@@ -80,7 +80,33 @@ body {
     color: #fff;
 }
 
-
+.tooltip {
+  cursor: help;
+  border-bottom: 1px dotted #555;
+}
+/* =========================
+   tooltip
+========================= */
+.tooltip-box {
+  position: absolute;
+  background: rgba(0,0,0,0.95);
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 6px;
+  max-width: 300px;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+.tooltip-box a {
+  color: #ffd700;
+  text-decoration: underline;
+}
+.tooltip-box img {
+  max-width: 100%;
+  height: auto;
+}
 /* =========================
    DROPDOWN
 ========================= */
