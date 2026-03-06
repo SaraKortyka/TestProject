@@ -103,7 +103,7 @@ static convertUmlauts(str) {
 
 }
 const TooltipData = {
-  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden \n Adaptionsautomatismus: das System lernt ohne unser Zutun"
+  "Automatismen": "Automatismen \n Handlungsautomatismus: wir handeln bevor wir entscheiden \n Adaptionsautomatismus: das System lernt ohne unser Zutun"
 };
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.tooltip').forEach(el => {
