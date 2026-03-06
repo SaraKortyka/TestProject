@@ -55,7 +55,10 @@ body {
     font-weight: 400;
     opacity: 0.8;
 }
-
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
 .main-nav ul {
     list-style: none;
     display: flex;
