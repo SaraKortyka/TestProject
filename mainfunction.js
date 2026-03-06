@@ -74,14 +74,14 @@ static async loadBreadcrumb() {
   // Erstes Segment = Hauptreiter
   let text = LayoutLoader.convertUmlauts(parts[0]);
   text = text.charAt(0).toUpperCase() + text.slice(1);
-  html += ` > <a href="${path}.html">${text}</a>`;
+  html += ` &rsaquo; <a href="${path}.html">${text}</a>`;
 
   // Unterseiten iterativ
   for (let i = 1; i < parts.length; i++) {
     path += `_${parts[i]}`;
     text = LayoutLoader.convertUmlauts(parts[i]);
     text = text.charAt(0).toUpperCase() + text.slice(1);
-    html += ` > <a href="${path}.html">${text}</a>`;
+    html += ` &rsaquo; <a href="${path}.html">${text}</a>`;
   }
 
   html += `</nav>`;
