@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="layout.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+	<script src="mainfunction.js"></script>
 </head>
 <body>
 
@@ -14,25 +15,24 @@
     </div>
 
 <main class="container content">
+ <div id="breadcrumb-placeholder">
+       
+    </div>
+ 
 
-    <nav class="breadcrumb">
-        <a href="#">Startseite</a> › 
-        <a href="#">Werk</a> › 
-        <span>Exkurse</span>
-    </nav>
-
-    <h1>Exkurse</h1>
+    <h1>Kommunikationsdilemma</h1>
 
     <p class="lead">
-        Die strenge Beweisführung des Werks verlangt einen roten Faden. 
-        Manches liegt quer dazu, vertieft einzelne Aspekte oder beleuchtet Zusammenhänge, 
-        die den Haupttext überfrachten würden. Diese Exkurse stehen für sich, 
-        bereichern aber das Verständnis des Ganzen.
+        Die Sprache selbst ist Teil des Problems. Sie ist durchdrungen von der Annahme
+		bewusster Handlungssteuerung. Jeder Satz, den wir formulieren, jedes Wort, das
+		wir wählen, trägt diese Annahme in sich. Zwischen Sender und Empfänger lässt
+		sich nichts übermitteln, das beim Empfänger nicht an authentischen Erfahrungen
+		anknüpfen kann. Wer die Erfahrung nicht hat, wird die Worte anders verstehen.
     </p>
 
-    <section class="card-list">
+   <h2>Strukturelle Kommunikationsbarrieren</h2>
 
-        <a href="#" class="card">
+        <a href="hauptreiter_werk__exkurse__kommunikationsdilemma.html" class="card">
             <h2>Kommunikationsdilemma</h2>
             <p>Warum Sprache das Problem ist: Zwischen Sender und Empfänger lässt sich nichts übermitteln, das beim Empfänger nicht an authentischen Erfahrungen anknüpft.</p>
         </a>
@@ -78,23 +78,41 @@
         </a>
 
     </section>
-
+   <p class="lead">
+        Die Metanoia beschreibt den Menschen als bedingtes Wesen. Diese Beschreibung
+		nutzt notwendigerweise eine Sprache, die für unbedingtes Handeln gemacht wurde.
+		Verben wie wollen, entscheiden, tun implizieren einen Akteur, der diese Handlungen
+		bewusst initiiert. Die Sprache selbst widerspricht dem, was sie ausdrücken soll.
+		Dieser Widerspruch ist unvermeidlich. Wir können nicht auf Sprache verzichten.
+		Wir können nur darauf hinweisen, dass jede Formulierung eine Hilfskonstruktion
+		ist, die an den Grenzen des Sagbaren arbeitet.
+    </p>
+	<h2>Aneignung und Vereinnahmung</h2>
+	<p>
+		Wer die Gedanken der Metanoia hört, ohne die zugrundeliegende Erfahrung zu
+		haben, wird sie in sein bestehendes Weltbild einordnen. Er wird glauben, er habe
+		verstanden. Er wird die Begriffe übernehmen und mit seinen eigenen Bedeutungen
+		füllen. Das ist keine böse Absicht. Es ist der Automatismus des Verstehens selbst.
+		Die typische Frage, die nach dem Erfassen der Grundaussage gestellt wird, lautet:
+		Wie bringe ich mein Bewusstsein ans Steuer? Diese Frage zeigt, dass die Aussage
+		nicht verstanden wurde. Wer sie stellt, sucht einen Trick, um die Bedingtheit zu
+		überwinden. Genau das ist unmöglich.
+	</p>
+	<h2>Strategische Nutzung</h2>
+	<p>
+		Das Kommunikationsdilemma lässt sich nicht auflösen. Es lässt sich aber nutzen.
+		Die Metanoia richtet sich an Menschen in Hörweite. Das sind Menschen, bei denen
+		die Worte an eigene Erfahrungen anknüpfen können. Sie werden das Signal erkennen.
+	</p>
 </main>
 
   <div id="footer-placeholder">
        
     </div>
 <script>
-fetch("kopfzeile.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header-placeholder").innerHTML = data;
-  });
-  fetch("fusszeile.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("footer-placeholder").innerHTML = data;
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  LayoutLoader.init();
+});
 </script>
 
 </body>
