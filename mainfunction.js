@@ -74,7 +74,7 @@ static async loadBreadcrumb() {
   // Erstes Segment = Hauptreiter
   let text = LayoutLoader.convertUmlauts(parts[0]);
   text = text.charAt(0).toUpperCase() + text.slice(1);
-  html += ` › <a href="${path}.html">${text}</a>`;
+  html += ` â€º <a href="${path}.html">${text}</a>`;
 
   // Unterseiten iterativ
   for (let i = 1; i < parts.length; i++) {
@@ -92,10 +92,10 @@ static async loadBreadcrumb() {
   }
 static convertUmlauts(str) {
   return str
-    .replace(/ae/g, "ä")
-    .replace(/oe/g, "ö")
-    .replace(/ue/g, "ü")
-    .replace(/ss/g, "ß")
+    .replace(/ae/g, "Ã¤")
+    .replace(/oe/g, "Ã¶")
+    .replace(/ue/g, "Ã¼")
+    .replace(/ss/g, "ÃŸ")
     .replace(/_/g, " "); // Unterstriche ? Leerzeichen
 }
   static init() {
