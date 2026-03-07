@@ -79,14 +79,55 @@ body {
     background: #2a2a2a;
     color: #fff;
 }
+.main-nav {
+    position: relative;
+}
 
+.main-nav .dropdown-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    background: #fff;
+    color: #222;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: none;
+}
+
+.main-nav .dropdown-menu li {
+    padding: 0;
+}
+
+.main-nav .dropdown-menu a {
+    display: block;
+    padding: 10px 16px;
+    color: #333;
+}
+
+.main-nav .dropdown-menu a:hover {
+    background: #f0f0f0;
+}
+
+.main-nav:hover .dropdown-menu {
+    display: block;
+}
+
+/* Optional: verhindert „Springen“ beim Hover */
+.main-nav .dropdown-menu {
+    margin-top: 4px;
+}
+
+
+/* =========================
+   tooltip
+========================= */
 .tooltip {
   cursor: help;
   border-bottom: 1px dotted #555;
 }
-/* =========================
-   tooltip
-========================= */
 .tooltip {
   cursor: help;
   border-bottom: 1px dotted #555;
@@ -254,6 +295,11 @@ h2 {
     transition: 0.2s ease;
 }
 
+.card:hover {
+    border-color: #ccc;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
 
 .card p {
     font-size: 0.95rem;

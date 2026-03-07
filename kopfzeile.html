@@ -1,3 +1,75 @@
+
+
+<!DOCTYPE html>
+
+<!--
+NAVIGATION BEARBEITEN
+
+Die Navigation besteht aus Hauptreitern und optionalen Untereinträgen (Dropdown-Menü).
+Ein Hauptreiter sieht immer aus dem <li></li> besagt, dass es eine liste ist, a dass es ein link zu einer anderen Seite ist. Dies da
+
+HAUPTREITER HINZUFÜGEN
+1. Kopiere die Beispielzeile unten.
+2. Füge sie an der gewünschten Stelle zwischen den anderen <li>...</li> ein.
+3. Passe den Dateinamen und den sichtbaren Text an.
+
+Beispiel Hauptreiter:
+<li><a href="hauptreiter_kern.html" data-nav="kern"> Kern </a></li>
+anpasse nur: _____________________                   ____
+"hauptreiter_kern.html" und den wert Kern
+
+HAUPTREITER LÖSCHEN
+Die komplette Zeile <li> ... </li> des Reiters entfernen.
+
+HAUPTREITER REIHENFOLGE ÄNDERN
+Die komplette <li> ... </li> Zeile an eine andere Stelle verschieben.
+Beispiel vorher
+<li><a href="hauptreiter_akademie.html" data-nav="akademie">Akademie</a></li>
+<li><a href="hauptreiter_treffpunkt.html" data-nav="treffpunkt">Treffpunkt</a></li>
+nachher
+<li><a href="hauptreiter_treffpunkt.html" data-nav="treffpunkt">Treffpunkt</a></li>
+<li><a href="hauptreiter_akademie.html" data-nav="akademie">Akademie</a></li>
+
+UNTERMENÜ (DROPDOWN) ERSTELLEN
+Wenn ein Hauptreiter Untereinträge haben soll, muss er so aussehen:
+
+<li class="dropdown">
+  <a href="hauptreiter_name.html">Name des Reiters</a>
+  <ul class="dropdown-menu">
+    <li><a href="hauptreiter_name__unterpunkt1.html">Unterpunkt 1</a></li>
+    <li><a href="hauptreiter_name__unterpunkt2.html">Unterpunkt 2</a></li>
+  </ul>
+</li>
+
+UNTEREINTRAG HINZUFÜGEN
+Eine neue Zeile innerhalb von <ul class="dropdown-menu"> ergänzen:
+
+<li><a href="hauptreiter_name__neuerpunkt.html">Neuer Unterpunkt</a></li>
+
+UNTEREINTRAG LÖSCHEN
+Die entsprechende <li> ... </li> Zeile im Bereich dropdown-menu entfernen.
+
+UNTEREINTRAG REIHENFOLGE ÄNDERN
+Die Zeilen innerhalb von <ul class="dropdown-menu"> verschieben.
+Beispiel vorher
+<li><a href="hauptreiter_kern__automatismen.html">Automatismen</a></li>
+<li><a href="hauptreiter_kern__illusionen.html">Illusionen</a></li>
+nachher
+<li><a href="hauptreiter_kern__illusionen.html">Illusionen</a></li>
+<li><a href="hauptreiter_kern__automatismen.html">Automatismen</a></li>
+
+WICHTIG
+- Nur den Text zwischen > und < ändern.
+- Die Zeichen < > / " nicht löschen.
+- Die Struktur <li> ... </li> immer vollständig stehen lassen.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="layout.css">
+</head>
+<body>
+
 <header class="site-header">
     <div class="container header-inner">
         <div class="logo">
@@ -5,12 +77,25 @@
 		</div>
         <nav class="main-nav">
             <ul>
+			
                 <li><a href="hauptreiter_kern.html" data-nav="kern">Kern</a></li>
+					 <ul class="dropdown-menu">
+						<li><a href="hauptreiter_kern__automatismen.html">Automatismen</a></li>
+						<li><a href="hauptreiter_kern__illusionen.html">Illusionen</a></li>
+						<li><a href="hauptreiter_kern__mechanismen.html">Mechanismen</a></li>
+						<li><a href="hauptreiter_kern__pragemuster.html">Prägemuster</a></li>
+						<li><a href="hauptreiter_kern__wesenskern.html">Wesenskern</a></li>
+						<!--<li><a href="hauptreiter_kern__neuer_unterreiter.html">Ein neuer Unterreiter</a></li>-->
+					  </ul>
                 <li><a href="hauptreiter_akademie.html" data-nav="akademie">Akademie</a></li>
                 <li><a href="hauptreiter_treffpunkt.html" data-nav="treffpunkt">Treffpunkt</a></li>
                 <li><a href="hauptreiter_geschichten.html" data-nav="geschichten">Geschichten</a></li>
-                <li><a href="hauptreiter_werk.html" data-nav="werk">Werk</a></li>
+                <li><a href="hauptreiter_werk.html" data-nav="geschichten">Werk</a></li>
+				<!--<li><a href="hauptreiter_name.html" data-nav="werk">Ein neuer Hauptreiter</a></li>-->
             </ul>
         </nav>
     </div>
 </header>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+schlagwörter in extra js datei. soll es auch layout haben? Bilder etc? oder nur kurze beschreibung?
+skript das über html seiten drüberläuft und alle wörter in der tooltip liste sucht die zwischen >< stehen (nicht in tag) und guckt ob sie den Span tag haben, wenn nicht setzen.
+zweisprachigkeit -> zwei möglichkeiten wie sprache eins zu eins übersetzt man kann auch von unterseite 113 zur anderen "sprache wechseln" oder man wählt sprache kommt auf startseite und hat dann komplett neuen/anderen Aufbau
+referenzen-> eine excelliste mit
+name der seite zeile 1
+spalte 1 referenzentitel spalte 2 refrenzenlink spalte 3 anekdotentitel spalte 4 anekdotenlink

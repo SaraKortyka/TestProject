@@ -26,7 +26,7 @@ class LayoutLoader {
   }
 
   static async loadHeader() {
-
+  if (!container) return;
     await this.load("header-placeholder", "kopfzeile.html");
 
     const activeNav = this.getActiveNav();
