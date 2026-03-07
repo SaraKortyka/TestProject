@@ -59,7 +59,7 @@ body {
     text-decoration: none;
     color: inherit;
 }
-.main-nav ul {
+.main-nav > ul {
     list-style: none;
     display: flex;
     gap: 28px;
@@ -111,9 +111,7 @@ body {
     background: #f0f0f0;
 }
 
-.main-nav:hover .dropdown-menu {
-    display: block;
-}
+
 
 /* Optional: verhindert „Springen“ beim Hover */
 .main-nav .dropdown-menu {
@@ -176,6 +174,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     display: none;
+    flex-direction: column;
 }
 
 .dropdown-menu li {
