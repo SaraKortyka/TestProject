@@ -99,74 +99,62 @@ static convertUmlauts(str) {
 
 }
 const TooltipData = {
-  "Biologische Evolution": "<span style=\"font-size:11pt;color:#000000;\">Hier kann ein mehrzeiliger<br>Text rein<br>Wir können auch vereinbaren, dass ich Stile wie </span><span style=\"font-weight:bold;font-size:11pt;color:#000000;\">fett</span><span style=\"font-size:11pt;color:#000000;\"> oder die</span><span style=\"font-size:18pt;color:#000000;\"> Schriftgröße</span><span style=\"font-size:11pt;color:#000000;\"> oder </span><span style=\"font-size:11pt;color:#4472C4;\">Farbe</span><span style=\"font-size:11pt;color:#000000;\"> übernehme</span>",
-  "Automatismen": "<span style=\"font-size:11pt;color:#000000;\">Handlungsautomatismus: Wir handeln, bevor wir denken<br>Adaptionsautomatismus: Das system lernt ohne unser Zutun</span>",
-  "Automatismus": "<span style=\"font-size:11pt;color:#000000;\">Handlungsautomatismus: Wir handeln, bevor wir denken<br>Adaptionsautomatismus: Das system lernt ohne unser Zutun</span>"
+  "Automatismen": "Handlungsautomatismus: wir handeln bevor wir entscheiden </br> Adaptionsautomatismus: das System lernt ohne unser Zutun"
 };
-
 document.addEventListener("DOMContentLoaded", () => {
   function formatKeyTitle(key) {
-    return key
-      .replace(/_/g, ' ')
-      .replace(/ae/g, 'ä')
-      .replace(/oe/g, 'ö')
-      .replace(/ue/g, 'ü')
-      .replace(/ss/g, 'ß')
-      .replace(/\b\w/g, c => c.toUpperCase());
-  }
-
-  // Alle Tooltip-Elemente
+  return key
+    .replace(/_/g, ' ')   // Unterstriche zu Leerzeichen
+    .replace(/ae/g, 'ä')
+    .replace(/oe/g, 'ö')
+    .replace(/ue/g, 'ü')
+    .replace(/ss/g, 'ß')
+    .replace(/\b\w/g, c => c.toUpperCase()); // erstes Zeichen jedes Wortes groß
+}
   document.querySelectorAll('.tooltip').forEach(el => {
-    // Jede .tooltip-Instanz bekommt ihre eigene Variable
-    let tooltipBox = null;
+    let tooltipBox;
 
     el.addEventListener('mouseenter', () => {
       const key = el.getAttribute('data-key');
       const content = TooltipData[key];
-      if (!content) return;
+      if(!content) return;
 
-      // Tooltip erzeugen
+      // Tooltip-Box erzeugen
       tooltipBox = document.createElement('div');
       tooltipBox.className = 'tooltip-box';
 
+      // Key als Titel oben
       const title = document.createElement('div');
       title.className = 'tooltip-title';
       title.innerText = formatKeyTitle(key);
 
+      // Inhalt darunter
       const body = document.createElement('div');
       body.className = 'tooltip-body';
-      body.innerHTML = content;
+      body.innerHTML = content; // HTML erlaubt <br>, Links, Bilder
 
       tooltipBox.appendChild(title);
       tooltipBox.appendChild(body);
 
+      // Vorübergehend versteckt anhängen, um Höhe zu messen
+      tooltipBox.style.position = 'absolute';
+      tooltipBox.style.visibility = 'hidden';
       document.body.appendChild(tooltipBox);
 
-      // Position über oder unter dem Element
       const rect = el.getBoundingClientRect();
-      const tooltipRect = tooltipBox.getBoundingClientRect();
-      let top = rect.top + window.scrollY - tooltipRect.height - 5;
-      let left = rect.left + window.scrollX;
-
-      if (top < window.scrollY) {
-        top = rect.bottom + window.scrollY + 5;
-      }
-
-      tooltipBox.style.position = 'absolute';
-      tooltipBox.style.top = top + 'px';
-      tooltipBox.style.left = left + 'px';
+      tooltipBox.style.left = rect.left + window.scrollX + 'px';
+      tooltipBox.style.top = rect.top + window.scrollY - tooltipBox.offsetHeight - 5 + 'px';
       tooltipBox.style.visibility = 'visible';
-      tooltipBox.style.zIndex = 9999;
     });
 
     el.addEventListener('mouseleave', () => {
-      if (tooltipBox) {
+      if(tooltipBox) {
         tooltipBox.remove();
-        tooltipBox = null; // freigeben, damit nächste Hover wieder funktioniert
+        tooltipBox = null;
       }
     });
   });
+  
 });
-
 
 

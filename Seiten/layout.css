@@ -134,8 +134,8 @@ body {
 }
 
 .tooltip-box {
-  background: rgba(255,255,255,255.95);
-  color: #000;
+  background: rgba(0,0,0,0.95);
+  color: #fff;
   padding: 8px 12px;
   border-radius: 5px;
   max-width: 300px;
